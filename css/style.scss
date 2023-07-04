@@ -1,0 +1,215 @@
+@font-face {
+  font-family: 'Hanken';
+  src: url('/assets/fonts/HankenGrotesk-VariableFont_wght.ttf'),
+    local('HankenGrotesk'), local('Hanken-Grotesk'),
+    url('/assets/fonts/static/HankenGrotesk-Bold.truetype'),
+    url('/assets/fonts/static/HankenGrotesk-ExtraBold.truetype'),
+    url('/assets/fonts/static/HankenGrotesk-Medium.truetype');
+}
+
+@mixin flex-center($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin list-color($color) {
+  color: $color;
+  background-color: color-mix(in srgb, $color, transparent 90%);
+}
+
+@mixin defaultGradient() {
+  background-image: linear-gradient(to top, #2e2be9, #7857ff);
+}
+
+$color-text-t: #ebf1ff;
+$button-color: #303b5a;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hanken', 'sans-serif';
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+.container {
+  min-width: 375px;
+  max-width: 768px;
+}
+
+.result-container {
+  @include flex-center(center, center, column);
+  gap: 2em;
+  padding: 3em;
+  box-sizing: border-box;
+  border-radius: 0 0 2em 2em;
+  @include defaultGradient();
+  color: white;
+
+  h2 {
+    color: $color-text-t;
+    font-size: 1em;
+  }
+
+  .result-circle {
+    @include flex-center(center, center, column);
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #4e21ca, transparent 95%);
+
+    h1 {
+      font-size: 3em;
+      p {
+        color: #c8c7ff;
+      }
+    }
+  }
+
+  .result-container-content {
+    h1 {
+      margin: 0 0 0.5em;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    p {
+      color: $color-text-t;
+      margin: auto;
+      width: 75%;
+      text-align: center;
+    }
+  }
+}
+
+.summary-container {
+  @include flex-center(space-between, '', column);
+  gap: 1em;
+  padding: 3em;
+  box-sizing: border-box;
+  background: inherit;
+
+  h2 {
+    color: $button-color;
+    display: inline-block;
+    text-align: left;
+  }
+
+  ul {
+    list-style-position: inside;
+    list-style-type: circle;
+  }
+
+  li {
+    @include flex-center(space-between, '', '');
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    span:last-child {
+      font-weight: bold;
+      color: color-mix(in srgb, $color-text-t, #000 50%);
+    }
+
+    span:last-child b {
+      color: initial;
+    }
+
+    &:nth-child(1) {
+      @include list-color(#f55);
+    }
+    &:nth-child(2) {
+      @include list-color(#ffb21e);
+    }
+    &:nth-child(3) {
+      @include list-color(#00bb8f);
+    }
+    &:nth-child(4) {
+      @include list-color(#1125d6);
+    }
+
+    .icon {
+      @include flex-center('', center, '');
+      svg {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  button {
+    padding: 1em;
+    background: $button-color;
+    border-radius: 5em;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    &:hover {
+      cursor: pointer;
+      background-image: linear-gradient(to top, #2e2be9, #7857ff);
+      @include defaultGradient();
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .attribution {
+    position: absolute;
+    bottom: 1em;
+  }
+
+  body {
+    @include flex-center(center, center, column);
+    height: 100vh;
+  }
+
+  .container {
+    @include flex-center('', '', row);
+    border-radius: 2em;
+    box-shadow: 1em 1em 2em #c8c7ff62;
+
+    .result-container {
+      flex: 1;
+      border-radius: 2em;
+      margin: 0;
+      gap: 4em;
+    }
+    .summary-container {
+      flex: 1;
+      border-radius: 2em;
+    }
+  }
+
+  .result-container {
+    h2 {
+      color: $color-text-t;
+      font-size: 1.5em;
+    }
+
+    .result-circle {
+      padding: 2em;
+      box-sizing: content-box;
+
+      h1 {
+        font-size: 3em;
+      }
+      p {
+        color: #c8c7ff;
+      }
+    }
+  }
+}

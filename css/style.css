@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Hanken";
+  src: url("/assets/fonts/HankenGrotesk-VariableFont_wght.ttf"), local("HankenGrotesk"), local("Hanken-Grotesk"), url("/assets/fonts/static/HankenGrotesk-Bold.truetype"), url("/assets/fonts/static/HankenGrotesk-ExtraBold.truetype"), url("/assets/fonts/static/HankenGrotesk-Medium.truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken", "sans-serif";
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.container {
+  min-width: 375px;
+  max-width: 768px;
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  padding: 3em;
+  box-sizing: border-box;
+  border-radius: 0 0 2em 2em;
+  background-image: linear-gradient(to top, #2e2be9, #7857ff);
+  color: white;
+}
+.result-container h2 {
+  color: #ebf1ff;
+  font-size: 1em;
+}
+.result-container .result-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #4e21ca, transparent 95%);
+}
+.result-container .result-circle h1 {
+  font-size: 3em;
+}
+.result-container .result-circle h1 p {
+  color: #c8c7ff;
+}
+.result-container .result-container-content h1 {
+  margin: 0 0 0.5em;
+  text-align: center;
+  font-size: 1.5em;
+}
+.result-container .result-container-content p {
+  color: #ebf1ff;
+  margin: auto;
+  width: 75%;
+  text-align: center;
+}
+
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: "";
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em;
+  box-sizing: border-box;
+  background: inherit;
+}
+.summary-container h2 {
+  color: #303b5a;
+  display: inline-block;
+  text-align: left;
+}
+.summary-container ul {
+  list-style-position: inside;
+  list-style-type: circle;
+}
+.summary-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: "";
+  flex-direction: "";
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+.summary-container li span:last-child {
+  font-weight: bold;
+  color: color-mix(in srgb, #ebf1ff, #000 50%);
+}
+.summary-container li span:last-child b {
+  color: initial;
+}
+.summary-container li:nth-child(1) {
+  color: #f55;
+  background-color: color-mix(in srgb, #f55, transparent 90%);
+}
+.summary-container li:nth-child(2) {
+  color: #ffb21e;
+  background-color: color-mix(in srgb, #ffb21e, transparent 90%);
+}
+.summary-container li:nth-child(3) {
+  color: #00bb8f;
+  background-color: color-mix(in srgb, #00bb8f, transparent 90%);
+}
+.summary-container li:nth-child(4) {
+  color: #1125d6;
+  background-color: color-mix(in srgb, #1125d6, transparent 90%);
+}
+.summary-container li .icon {
+  display: flex;
+  justify-content: "";
+  align-items: center;
+  flex-direction: "";
+}
+.summary-container li .icon svg {
+  margin-right: 1em;
+}
+.summary-container button {
+  padding: 1em;
+  background: #303b5a;
+  border-radius: 5em;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+}
+.summary-container button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to top, #2e2be9, #7857ff);
+  background-image: linear-gradient(to top, #2e2be9, #7857ff);
+}
+
+@media screen and (min-width: 700px) {
+  .attribution {
+    position: absolute;
+    bottom: 1em;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .container {
+    display: flex;
+    justify-content: "";
+    align-items: "";
+    flex-direction: row;
+    border-radius: 2em;
+    box-shadow: 1em 1em 2em rgba(200, 199, 255, 0.3843137255);
+  }
+  .container .result-container {
+    flex: 1;
+    border-radius: 2em;
+    margin: 0;
+    gap: 4em;
+  }
+  .container .summary-container {
+    flex: 1;
+    border-radius: 2em;
+  }
+  .result-container h2 {
+    color: #ebf1ff;
+    font-size: 1.5em;
+  }
+  .result-container .result-circle {
+    padding: 2em;
+    box-sizing: content-box;
+  }
+  .result-container .result-circle h1 {
+    font-size: 3em;
+  }
+  .result-container .result-circle p {
+    color: #c8c7ff;
+  }
+}/*# sourceMappingURL=style.css.map */
